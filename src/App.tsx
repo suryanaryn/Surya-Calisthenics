@@ -50,12 +50,15 @@ export default function App() {
      {/* 3. Video Section */}
       <VideoSection />
 
+        {/* 4. Client Transformations Gallery */}
+      <Transformations onCtaClick={triggerSignupPortal} />
+
       {/* 1. Hero Section */}
       <Hero onPrimaryCtaClick={triggerInstagramDm} onSecondaryCtaClick={scrollToResults} />
 
       
-      {/* 4. Client Transformations Gallery */}
-      <Transformations onCtaClick={triggerSignupPortal} />
+     {/* 5. Video Testimonials Carousel */}
+      <VideoTestimonials />
 
       {/* 6. About the Coach */}
       <About onCtaClick={triggerSignupPortal} />
@@ -68,8 +71,7 @@ export default function App() {
       
 
 
-      {/* 5. Video Testimonials Carousel */}
-      <VideoTestimonials />
+     
 
       
 

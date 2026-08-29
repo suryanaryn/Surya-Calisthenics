@@ -99,7 +99,7 @@ export default function VideoSection(_: VideoSectionProps) {
   }, []);
 
   return (
-    <section className="py-24 bg-brand-bg text-brand-text relative border-b border-brand-border" id="video">
+    <section className="relative overflow-hidden bg-brand-bg text-brand-text border-b border-brand-border" id="video">
       {/* Top nav bar pinned to the top edge of the video section */}
       <div className="absolute top-0 left-0 right-0 z-30">
         <div className="w-full px-3 sm:px-5 md:px-6">
@@ -132,7 +132,16 @@ export default function VideoSection(_: VideoSectionProps) {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 relative z-10 text-center min-h-[100vh] flex flex-col justify-center py-4 md:py-6">
+        <div className="mb-4 md:mb-5 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-[3.2rem] font-serif italic font-normal tracking-tight text-brand-text leading-tight">
+            <span className="text-brand-primary">⚠️</span>{' '}
+            <span className="text-brand-primary">Watch Before Joining</span>
+          </h2>
+          <p className="mx-auto mt-3 max-w-3xl text-xs sm:text-sm leading-relaxed text-brand-muted">
+            Meet <span>Coach Surya</span>, discover how you can build your own body  through calisthenics. <span className='font-bold text-brand-secondary'> LIMITED SEATS LEFT !!!</span>
+          </p>
+        </div>
 
         {/* Video Player Frame */}
         <motion.div
@@ -141,10 +150,10 @@ export default function VideoSection(_: VideoSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="relative rounded-none shadow-3xl group"
+          className="relative rounded-none shadow-3xl group w-full max-w-[1100px] mx-auto"
         >
           <div className="relative rounded-none p-[1px] bg-brand-border">
-            <div className="relative aspect-video w-full rounded-none overflow-hidden bg-black">
+            <div className="relative aspect-video w-full rounded-none overflow-hidden bg-black max-h-[58vh]">
               
               {/* YouTube Iframe */}
               <iframe
@@ -168,12 +177,12 @@ export default function VideoSection(_: VideoSectionProps) {
                     className="absolute inset-0 w-full h-full object-cover opacity-60"
                   />
                   
-                  <div className="relative z-10 flex flex-col items-center gap-4">
+                  <div className="relative z-10 flex flex-col items-center gap-2 sm:gap-4">
                     {/* Glowing Play Button Icon */}
-                    <div className="h-16 w-16 rounded-full bg-brand-primary/90 text-black flex items-center justify-center shadow-2xl transition-transform transform group-hover/overlay:scale-110">
-                      <Play className="h-7 w-7 fill-current ml-1" />
+                    <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-brand-primary/90 text-black flex items-center justify-center shadow-2xl transition-transform transform group-hover/overlay:scale-110">
+                      <Play className="h-5 w-5 sm:h-7 sm:w-7 fill-current ml-1" />
                     </div>
-                    <span className="font-mono text-xs uppercase tracking-widest text-white bg-black/80 px-4 py-2 border border-white/20 shadow-lg">
+                    <span className="font-mono text-[9px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-widest text-white bg-black/80 px-3 py-1.5 sm:px-4 sm:py-2 border border-white/20 shadow-lg">
                       Meet your coach Surya
                     </span>
                   </div>
@@ -209,7 +218,7 @@ export default function VideoSection(_: VideoSectionProps) {
           </div>
         </motion.div>
 
-        <div className="mt-5 md:mt-6 flex justify-center">
+        <div className="mt-4 md:mt-5 flex justify-center ">
           <motion.button
             type="button"
             onClick={handleApplyClick}
@@ -223,9 +232,9 @@ export default function VideoSection(_: VideoSectionProps) {
             transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto px-6 md:px-8 py-3 bg-brand-primary text-white border border-brand-primary hover:bg-brand-secondary hover:border-brand-secondary transition-colors font-mono text-[11px] md:text-xs uppercase tracking-[0.18em] font-bold cursor-pointer"
+            className="w-[84%] max-w-[320px] sm:w-auto px-6 md:px-8 py-3 bg-brand-primary text-white border-2 border-[#111111] hover:bg-brand-secondary hover:border-[#111111] transition-colors font-mono text-[11px] md:text-xs uppercase tracking-[0.18em] font-bold cursor-pointer rounded-xl shadow-[0_6px_0_#111111]"
           >
-            Join 1-1 Personal Training
+            Book 1-1 Personal Training
           </motion.button>
         </div>
 

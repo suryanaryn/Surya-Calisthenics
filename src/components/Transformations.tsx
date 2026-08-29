@@ -205,7 +205,7 @@ export default function Transformations({ items: itemsProp, onCtaClick }: Transf
       id="transformations"
     >
       {/* Section Header - Clean, Compact, Highly readable */}
-      <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-12 relative z-10">
+      {/* <div className="max-w-7xl mx-auto px-6 mb-8 md:mb-12 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <span className="text-[10px] font-mono font-bold tracking-[0.3em] text-brand-primary uppercase block mb-1.5">
@@ -225,7 +225,7 @@ export default function Transformations({ items: itemsProp, onCtaClick }: Transf
             <span className="flex items-center gap-1.5"><ArrowLeftRight className="h-3 w-3 text-brand-primary animate-pulse" /> Drag to Browse</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Swipeable & Scroll-Synced Track (transform-driven, infinite loop) */}
       <div className="relative w-full overflow-hidden">

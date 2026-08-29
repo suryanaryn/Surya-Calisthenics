@@ -17,16 +17,23 @@ export default function FloatingCta({ onClick }: FloatingCtaProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show floating CTA once user scrolls past hero section (1 h-screen)
-      if (window.scrollY > window.innerHeight - 150) {
+      const videoSection = document.getElementById('video');
+      const threshold = videoSection ? videoSection.offsetTop + videoSection.offsetHeight * 0.45 : window.innerHeight;
+
+      if (window.scrollY > threshold) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
       }
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   return (
